@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>React</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,600" rel="stylesheet" type="text/css">
+    <!-- build:css styles/styles.css-->
+    <link rel="stylesheet" type="text/css" href="bower_components/prism/themes/prism-twilight.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <!-- endbuild-->
+  </head>
+  <body>
+    <article>
+      <section>
+        <h2>Introducción a React</h2>
+        <h3><a href="#">@0x7b1</a></h3>
+      </section>
+      <section>
+        <h3>Angular es horrrrrrible</h3>
+        <h2>💩</h2>
+      </section>
+      <section data-bespoke-state="green" class="light">
+        <h2>Un poco de historia</h2>
+        <h5>Porque siempre es bueno conocer</h5>
+      </section>
+      <section data-bespoke-state="green" class="light">
+        <h2>Primero las bases</h2>
+        <h3>Repasemos un poco de JavaScript 🐢💨</h3>
+      </section>
+      <section>
+        <h3>let, const and block scoping</h3>
+        <pre class="language-javascript"><code>const B = 5;
+B = 10; // TypeError: Assignment to constant variable
+
+const ARR = [5, 6];
+ARR.push(7);
+console.log(ARR); // [5,6,7]
+ARR = 10; // TypeError: Assignment to constant variable
+ARR[0] = 3; // value is mutable
+console.log(ARR); // [3,6,7]
+</code></pre>
+      </section>
+      <section>
+        <h3>Default Function Parameters</h3>
+        <pre class="language-javascript"><code>let getFinalPrice = (price, tax = 0.7) => price + price * tax;
+getFinalPrice(500); // 850
+</code></pre>
+      </section>
+      <section>
+        <h3>Spread / Rest Operator</h3>
+        <pre class="language-javascript"><code>function foo(x, y, z) {
+    console.log(x, y, z);
+}
+
+let arr = [1, 2, 3];
+foo(...arr); // 1 2 3
+</code></pre>
+      </section>
+      <section>
+        <h3>Classes</h3>
+        <pre class="language-javascript"><code>class Car {
+    constructor() {
+        console.log("Creating a new car");
+    }
+}
+
+class Porsche extends Car {
+    constructor() {
+        super();
+        console.log("Creating Porsche");
+    }
+}
+
+let c = new Porsche();
+// Creating a new car
+// Creating Porsche
+</code></pre>
+      </section>
+      <section>
+        <h3>Arrow Functions</h3>
+        <pre class="language-javascript"><code>// Classical Function Expression
+let addition = function(a, b) {
+    return a + b;
+};
+
+// Implementation with Arrow Function
+let addition = (a, b) => a + b;
+</code></pre>
+      </section>
+      <section data-bespoke-state="green" class="light">
+        <h2>Ahora las herramientas complementarias</h2>
+      </section>
+      <section class="gif gif--techs">
+        <p>Webpack</p>
+        <p>Babel</p>
+        <p>Nodejs</p>
+        <p>Flux</p>
+        <p>JSX</p>
+        <ul>
+          <li></li>
+          <li>Redux</li>
+          <li>Alt</li>
+          <li>Thunks</li>
+          <li>Sagas</li>
+          <li>🙏🏻</li>
+        </ul>
+      </section>
+      <section>
+        <h2 class="bullet">Pros de React</h2>
+        <ul>
+          <li>elegante</li>
+          <li>sencillo</li>
+          <li>rápido</li>
+          <li>comunidad</li>
+          <li>unidirectional data flow</li>
+          <li>virtual DOM</li>
+          <li>liviano (12KB)</li>
+          <li>es un dito</li>
+        </ul>
+      </section>
+      <section>
+        <h2 class="bullet">Contras de React</h2>
+        <ul>
+          <li>ninguna</li>
+          <li>😸</li>
+        </ul>
+      </section>
+      <section>
+        <h2 class="bullet">Contras de React</h2>
+        <ul>
+          <li>tener un nivel semi-avanzado de JavaScript</li>
+          <li>aprender JSX<small>&nbsp;(realmente no es un problema)</small></li>
+          <li>necesitas configurar un entorno</li>
+        </ul>
+      </section>
+      <section>
+        <h2 class="bullet">Principio DOTADIW</h2>
+        <h3>Do One Thing and Do It Well</h3>
+        <ul>
+          <li>Es el principio por el cual Unix está construido </li>
+          <li><strong>Small is beautiful</strong></li>
+          <li><strong>Make each program do one thing well</strong></li>
+          <li><strong>Choose portability over efficiency</strong></li>
+          <li>
+            <storng>...</storng>
+          </li>
+          <li>Modularity, Clarity, Composition, Separation, Simplicity, Transparency, Robustness, Extensibility, ...</li>
+          <li>e.g. networking stack, sockets, daemons, pipes, fs</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Componentes</h2><img src="http://coenraets.org/blog/wp-content/uploads/2014/12/uimockscript.png">
+      </section>
+      <section>
+        <h3>JSX</h3>
+        <pre class="language-javascript"><code>var Form = MyFormComponent;
+
+var App = (
+  &lt;Form&gt;
+    &lt;Form.Row&gt;
+      &lt;Form.Label /&gt;
+      &lt;Form.Input /&gt;
+    &lt;/Form.Row&gt;
+  &lt;/Form&gt;
+);
+</code></pre>
+      </section>
+      <section><img src="https://avatars2.githubusercontent.com/u/810438?v=3&amp;s=400" class="avatar"><br>
+        <blockquote>"the Facebook codebase has over <strong>20,000</strong> React components, and that’s not even counting React Native"</blockquote><br>
+        <p><a href="#">Dan Abramov<br><small>React core developer</small></a><br><small>April 2016</small></p>
+      </section>
+      <section><img src="https://facebook.github.io/react/img/logo.svg" class="avatar"><br>
+        <blockquote>"Components written by different people should work well together. It is important to us that you can add functionality to a component without causing rippling changes throughout the codebase."</blockquote><br>
+        <p><a href="#">Facebook React Team</a><br><small>July 2016</small></p>
+      </section>
+      <section>
+        <h2>Quién usa React?</h2>
+        <ul>
+          <li>DoApps</li>
+          <li>Airbnb</li>
+          <li>Dropbox</li>
+          <li>Uber</li>
+          <li>Facebook</li>
+          <li>Instagram</li>
+          <li>Apple</li>
+          <li>...</li>
+        </ul>
+      </section>
+      <section class="gif gif--gulp-api">
+        <h1 class="bullet">YA QUIERO EMPEZAR</h1>
+        <h2 class="bullet">Qué necesito configurar?</h2>
+      </section>
+      <section class="gif gif--wrong-question">
+        <h1>WRONG QUESTION</h1>
+      </section>
+      <section>
+        <h3>La manera más facil de empezar</h3>
+        <pre class="language-bash"><code>$ git clone https://github.com/srn/react-webpack-boilerplate.git &&\
+  cd react-webpack-boilerplate &&\
+  npm install
+  </code></pre>
+      </section>
+      <section>
+        <h3>Si solamente quieres un entorno descartable</h3>
+        <pre class="language-bash"><code>https://jsbin.com/
+</code></pre>
+      </section>
+      <section class="gif gif--omg-grunt">
+        <h1>DEMO TIME</h1>
+      </section>
+      <section>
+        <h2>Haremos un pokedex</h2>
+        <h4>lorcho</h4>
+        <iframe height="265" scrolling="no" src="//codepen.io/rovyoper/embed/KrRwGz/?height=265&amp;theme-id=dark&amp;default-tab=result&amp;embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/rovyoper/pen/KrRwGz/">KrRwGz</a> by Juan C. R. (<a href="http://codepen.io/rovyoper">@rovyoper</a>) on <a href="http://codepen.io">CodePen</a>.</iframe>
+      </section>
+      <section class="gif gif--hot-reloading">
+        <h1>HOT RELOADING EN ACCIÓN</h1>
+      </section>
+      <section class="gif gif--bill">
+        <h3>Gracias</h3>
+        <h2>Si te gustó, úsalo</h2>
+      </section>
+    </article>
+    <!-- build:js scripts/scripts.js-->
+    <script src="bower_components/bespoke.js/dist/bespoke.min.js"></script>
+    <script src="bower_components/bespoke-keys/dist/bespoke-keys.min.js"></script>
+    <script src="bower_components/bespoke-touch/dist/bespoke-touch.min.js"></script>
+    <script src="bower_components/bespoke-bullets/dist/bespoke-bullets.min.js"></script>
+    <script src="bower_components/bespoke-scale/dist/bespoke-scale.min.js"></script>
+    <script src="bower_components/bespoke-hash/dist/bespoke-hash.min.js"></script>
+    <script src="bower_components/bespoke-progress/dist/bespoke-progress.min.js"></script>
+    <script src="bower_components/bespoke-state/dist/bespoke-state.min.js"></script>
+    <script src="bower_components/prism/prism.js"></script>
+    <script src="scripts/main.js"></script>
+    <!-- endbuild-->
+  </body>
+</html>
